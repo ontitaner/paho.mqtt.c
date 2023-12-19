@@ -1,3 +1,13 @@
+
+交叉编译步骤：
+（1）修改paho.mqtt.c-master cmake路径下toolchain.linux-arm11.cmake
+     SET(CMAKE_C_COMPILER aarch64-linux-gnu-gcc)
+（2）mkdir build
+（3）cd build
+（4）cmake -DCMAKE_TOOLCHAIN_FILE=/home/windos/test/paho.mqtt.c-master/cmake/toolchain.linux-arm11.cmake /home/windos/test/paho.mqtt.c-master
+（5）make DESTDIR=. install    .表示当前路径
+
+
 [![Build Status](https://travis-ci.org/eclipse/paho.mqtt.c.svg?branch=master)](https://travis-ci.org/eclipse/paho.mqtt.c)
 [![Total Alerts](https://img.shields.io/lgtm/alerts/g/eclipse/paho.mqtt.c.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/eclipse/paho.mqtt.c/alerts/)
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/2339/badge.svg)](https://scan.coverity.com/projects/paho-c)
